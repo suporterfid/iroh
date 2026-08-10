@@ -64,11 +64,13 @@ Have an idea for a self-hosted tool that belongs in the IROH initiative? We are 
 ### Minimum Architectural Requirements
 To qualify as an official IROH project, your application must meet the following criteria:
 
-1. **Shared Hosting Native**: Must run on standard PHP 8.2+ shared hosting (cPanel, Hostinger, Nginx, Apache) without requiring root/SSH access, Docker in production, or proprietary cloud runtimes.
-2. **Open Data Formats**: Data must be stored in open, transparent formats (Markdown files, standard JSON, or plain SQL tables) with full user exportability.
-3. **Self-Hosted & Independent**: 100% functional out of the box without mandatory SaaS subscriptions or proprietary cloud API keys.
-4. **Dual Database Friendly**: Supports SQLite for single-tenant / zero-config setups and MySQL/MariaDB for shared host databases.
-5. **Low Maintenance**: Engineered for long-term stability with minimal dependency bloat.
+1. **100% Testable, Buildable & Deployable via Docker**: Local development environments MUST be fully containerized using Docker & Docker Compose (`web`, `php`, `frontend`, `db`). The application MUST be 100% testable, buildable, and previewable inside containers.
+2. **Cross-Platform PowerShell & Bash Symmetry**: All CLI workflows (setup, local build, test runner execution, migrations) MUST execute with 100% symmetry across **Windows (PowerShell)** and **Linux (Bash)**.
+3. **Shared Hosting Native**: Production builds must run natively on standard PHP 8.2+ shared hosting (cPanel, Hostinger, Nginx, Apache) without requiring root/SSH access, Docker in production, or proprietary cloud runtimes.
+4. **Open Data Formats**: Data must be stored in open, transparent formats (Markdown files, standard JSON, or plain SQL tables) with full user exportability.
+5. **Self-Hosted & Independent**: 100% functional out of the box without mandatory SaaS subscriptions or proprietary cloud API keys.
+6. **Dual Database Friendly**: Supports SQLite for single-tenant / zero-config setups and MySQL/MariaDB for shared host databases.
+7. **Low Maintenance**: Engineered for long-term stability with minimal dependency bloat.
 
 ### How to Propose
 To submit a proposal, navigate to our meta-repository issues page and open a [Propose New IROH Project issue](.github/ISSUE_TEMPLATE/propose-new-iroh-project.md).
@@ -79,8 +81,10 @@ To submit a proposal, navigate to our meta-repository issues page and open a [Pr
 
 Before submitting a pull request or proposing a project, verify compliance against this checklist:
 
+- [ ] **100% Testable, Buildable & Deployable via Docker**: Application builds, runs tests, and executes containerized previews locally via Docker Compose (`web`, `php`, `frontend`, `db`).
+- [ ] **Windows (PowerShell) & Linux (Bash) Parity**: Build commands, test invocations, and container scripts execute with total symmetry on both Windows PowerShell and Linux Bash.
 - [ ] **Runs on Shared Hosting**: Verified to execute on PHP 8.2+ with PDO (MySQL & SQLite) on standard cPanel/Apache/Nginx.
-- [ ] **Simple Deployment**: Can be deployed via simple `.zip` upload, FTP/SFTP/rsync, or basic `composer install`.
+- [ ] **Simple Deployment**: Can be deployed via local build scripts uploading static Vue 3 builds + PHP code via `.zip`, FTP/SFTP/rsync, or basic `composer install`.
 - [ ] **Open Data Formats**: All persistent data uses plain text, Markdown, JSON, or standard SQL tables.
 - [ ] **Self-Hosted First**: Zero mandatory external SaaS dependencies or proprietary cloud service requirements.
 - [ ] **Single-Engineer Legibility**: Codebase is clean, well-documented, and easy for a single developer to audit.

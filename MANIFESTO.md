@@ -35,6 +35,9 @@ A single developer should be able to clone an IROH project, read through the cod
 ### V. Pragmatic Multi-Tenancy & Single-Tenant Simplicity
 We favor simple, self-contained single-tenant deployments or straightforward workspace isolation models. We build software for individuals, small teams, and independent operators who value sovereignty over hyper-scale multi-cluster complexity.
 
+### VI. 100% Docker Buildability & Windows/Linux Cross-Platform Symmetry
+Every IROH project MUST be 100% testable, buildable, and deployable locally using standard Docker & Docker Compose services (`web` Nginx, `php` PHP-FPM, `frontend` Node/Vite, `db` MySQL/SQLite). Developer tooling, build scripts, database migrations, and automated test suites MUST work with complete symmetry across both **Windows (PowerShell)** and **Linux (Bash)** environments without requiring platform-specific workarounds.
+
 ---
 
 ## 3. The "Wise Elder" Metaphor

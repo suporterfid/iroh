@@ -37,10 +37,11 @@ Every project in the IROH initiative is crafted around open data formats (such a
 
 All projects operating under the IROH banner adhere to a shared set of engineering principles:
 
+* **100% Testable, Buildable & Deployable via Docker**: Every IROH web application is fully containerized using Docker & Docker Compose (`web` Nginx, `php` PHP-FPM 8.2+, `frontend` Node 20 / Vite, `db` MySQL 8.0 / SQLite). Every codebase MUST be 100% buildable, testable, and runnable locally within Docker containers.
+* **Cross-Platform PowerShell & Bash Symmetry**: Developer workflows (environment setup, building assets, running test suites, executing migrations, and triggering local builds) MUST offer complete symmetry between **Windows (PowerShell)** and **Linux (Bash)** environments.
 * **PHP 8.2+ & Dual Database Support**: Powered by modern PHP with PDO support for both SQLite (ideal for single-tenant / zero-config installs) and MySQL/MariaDB (standard on shared host cPanels).
 * **No Mandatory Proprietary Cloud Services**: Applications operate 100% self-contained without mandatory SaaS subscriptions, external database dependencies, or proprietary cloud APIs.
-* **Local Docker for DX Only**: Docker & Docker Compose are used strictly for local development and automated testing environments. Production execution relies on standard server runtimes.
-* **cPanel & Shared Hosting Compatibility**: Deployment is straightforward via standard ZIP upload, FTP/SFTP/rsync, basic `composer install`, and standard `.htaccess` URL rewriting.
+* **cPanel & Shared Hosting Deployment**: While building, testing, and containerized preview occur locally via Docker, production deployment to shared hosting (e.g., Hostinger cPanel) is executed seamlessly via local build scripts (uploading static Vue 3 builds + PHP code via ZIP/FTP/SFTP/rsync with `.htaccess`).
 * **Open Data Formats**: Data is persisted in human-readable Markdown files or standard SQL structures to guarantee full data portability and auditability.
 
 ---

@@ -33,14 +33,15 @@ Cada projeto na iniciativa IROH é construído ao redor de formatos abertos de d
 
 ---
 
-## 🛠️ Requisitos Arquitetonicos Comuns
+## 🛠️ Requisitos Arquitetônicos Comuns
 
 Todos os projetos sob a chancela IROH seguem um conjunto compartilhado de princípios de engenharia:
 
+* **100% Testável, Compilável e Desdobrável via Docker**: Cada aplicação web IROH é totalmente containerizada usando Docker e Docker Compose (`web` Nginx, `php` PHP-FPM 8.2+, `frontend` Node 20 / Vite, `db` MySQL 8.0 / SQLite). Todo o código DEVE ser 100% compilável, testável e executável localmente dentro de containers Docker.
+* **Simetria Cross-Platform em PowerShell (Windows) e Bash (Linux)**: Os fluxos de trabalho de desenvolvimento (configuração de ambiente, compilação de assets, execução de suítes de teste, migrações e builds locais) DEVEM oferecer total simetria de comandos entre **Windows (PowerShell)** e **Linux (Bash)**.
 * **PHP 8.2+ e Suporte Duplo a Banco de Dados**: Alimentados por PHP moderno com suporte PDO tanto para SQLite (ideal para instalações single-tenant / zero-configuração) quanto para MySQL/MariaDB (padrão em cPanels de hospedagem compartilhada).
 * **Sem Serviços Cloud Proprietários Obrigatórios**: As aplicações funcionam 100% autônomas, sem assinaturas SaaS obrigatórias, dependências de bancos externos ou APIs cloud proprietárias.
-* **Docker Apenas para Experiência de Desenvolvimento (DX)**: Docker e Docker Compose são utilizados estritamente para ambientes locais de desenvolvimento e testes automatizados. A execução em produção depende de runtimes padrão de servidor.
-* **Compatibilidade com cPanel e Hospedagem Compartilhada**: Implantação direta via upload de arquivo ZIP, FTP/SFTP/rsync, `composer install` básico e reescrita de URL padrão via `.htaccess`.
+* **Implantação em Hospedagem Compartilhada (cPanel)**: Embora a compilação, testes e visualização containerizada ocorram localmente via Docker, o deploy para a hospedagem compartilhada (ex: Hostinger cPanel) é realizado diretamente através de scripts de build locais (enviando os estáticos do Vue 3 + código PHP via ZIP/FTP/SFTP/rsync com `.htaccess`).
 * **Formatos Abertos de Dados**: Os dados são mantidos em arquivos Markdown legíveis por humanos ou em estruturas SQL padrão para garantir total portabilidade e auditabilidade dos dados.
 
 ---

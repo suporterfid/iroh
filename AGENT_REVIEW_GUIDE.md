@@ -64,7 +64,8 @@ Rewrite or adjust `README.md` to contain the following standard structure:
 5. **Requirements**:
    * Supported PHP runtime (PHP 8.2+ with PDO).
    * Dual database support (SQLite for single-tenant / zero-config; MySQL/MariaDB for shared host cPanel).
-   * Explicit note: Docker and Docker Compose are for local development (DX) only — production relies on standard server runtimes.
+   * 100% Docker containerized local DX (`web` Nginx, `php` PHP-FPM, `frontend` Node/Vite, `db` MySQL/SQLite). Every codebase MUST be 100% testable, buildable, and runnable locally within Docker Compose containers.
+   * Windows (PowerShell) & Linux (Bash) Cross-Platform Parity: CLI workflows for starting environment, running tests (`phpunit`), compiling frontend assets (`npm run build`), running database migrations, and executing local deployment scripts MUST offer complete symmetry across Windows PowerShell and Linux Bash.
 6. **Frontend & UI Design System** (if project includes a user interface):
    * Highlight compliance with the IROH Notion-inspired, content-first visual identity specification.
    * Mention public CSS semantic tokens contract (`:root`, `[data-theme='light']`, `[data-theme='dark']`).

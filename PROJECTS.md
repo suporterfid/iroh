@@ -36,6 +36,28 @@ While each project can operate completely standalone, they are engineered to sea
 
 ---
 
+## 🐳 Standard Containerized DX, Testing & Building (Windows & Linux Symmetry)
+
+Every fullstack web project within the IROH initiative is **100% testable, buildable, and runnable locally via Docker Compose** with total symmetry across **Windows (PowerShell)** and **Linux (Bash)** environments.
+
+### Standard `docker-compose.yml` Services
+1. `web` — Nginx reverse proxy serving frontend static builds and PHP-FPM API endpoints.
+2. `php` — PHP 8.2-FPM container equipped with `pdo_sqlite` and `pdo_mysql`.
+3. `frontend` — Node 20 / Vite dev server with Hot Module Replacement (HMR).
+4. `db` — MySQL 8.0 server (mirroring Hostinger production database behavior).
+
+### Symmetrical Developer Commands
+
+| Workflow Step | Windows (PowerShell) | Linux (Bash) |
+| :--- | :--- | :--- |
+| **Start Environment** | `docker compose up -d` | `docker compose up -d` |
+| **Run Unit / Integration Tests** | `docker compose exec php ./vendor/bin/phpunit` | `docker compose exec php ./vendor/bin/phpunit` |
+| **Compile Production Frontend Build** | `docker compose exec frontend npm run build` | `docker compose exec frontend npm run build` |
+| **Execute Database Migrations** | `docker compose exec php php artisan migrate` | `docker compose exec php php artisan migrate` |
+| **Deploy Build to Hostinger** | `powershell ./scripts/deploy-hostinger.ps1` | `bash ./scripts/deploy-hostinger.sh` |
+
+---
+
 ## 1. jotter
 
 * **Repository**: [`suporterfid/jotter`](https://github.com/suporterfid/jotter)
