@@ -50,7 +50,7 @@ All projects operating under the IROH banner adhere to a shared set of engineeri
 Want to learn more about the philosophy behind IROH, the "wise elder" archetype, and our design conventions?
 
 * **[MANIFESTO.md](MANIFESTO.md)** — Read our complete vision on why shared hosting matters and our core design principles.
-* **[BRANDING.md](BRANDING.md)** — Explore our visual identity, color palettes, typography, and voice & tone guidelines.
+* **[BRANDING.md](BRANDING.md)** — Explore our visual identity, semantic CSS token contract, frontend design system, typography, and voice & tone guidelines.
 
 ---
 

@@ -50,7 +50,7 @@ Todos os projetos sob a chancela IROH seguem um conjunto compartilhado de princ�
 Deseja saber mais sobre a filosofia por trás do IROH, o arquétipo do "ancião sábio" e nossas convenções de design?
 
 * **[MANIFESTO.md](MANIFESTO.md)** — Leia nossa visão completa sobre por que a hospedagem compartilhada importa e nossos princípios fundamentais de design.
-* **[BRANDING.md](BRANDING.md)** — Explore nossa identidade visual, paletas de cores, tipografia e diretrizes de tom de voz.
+* **[BRANDING.md](BRANDING.md)** — Explore nossa identidade visual, contrato de tokens CSS semânticos, design system frontend, tipografia e diretrizes de tom de voz.
 
 ---
 
