@@ -102,7 +102,7 @@ Where `<PROJECT_NAME>` integrates with other IROH projects, add an **"Integratio
 * `jotter` (`suporterfid/jotter`) — Self-hosted Markdown knowledge base & WebDAV sync.
 * `ConvertDocToMd-PHP` (`suporterfid/ConvertDocToMd-PHP`) — Plain PHP DOC/DOCX/PDF to Markdown converter.
 * `taskconnect` (`suporterfid/taskconnect`) — Lightweight task & project manager.
-* `statusconnect` (`suporterfid/statusconnect`) — Uptime monitoring & public status page.
+* `statusconnect` (hosted service at https://app.statusconnect.net, no public repository) — Uptime monitoring & public status page.
 * `tallymark` (`suporterfid/tallymark`) — Minimalist tally & event counter.
 
 #### 7. Voice & Tone Rules
