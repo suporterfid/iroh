@@ -173,27 +173,25 @@ Every fullstack web project within the IROH initiative is **100% testable, build
 
 ## 5. statusconnect
 
-* **Repository**: [`suporterfid/statusconnect`](https://github.com/suporterfid/statusconnect)
-* **Status**: `Planned`
+* **Service**: [app.statusconnect.net](https://app.statusconnect.net) (hosted; the source repository is private)
+* **Status**: `In production`
 * **Category**: Uptime Monitoring & Public Status Page
 
 ### Description
-`statusconnect` is a self-hosted uptime monitoring service and public status page generator. Designed to run on shared host cPanel cron jobs, it periodically tests HTTP endpoints, ping targets, SSL certificates, and database responsiveness, presenting uptime metrics on a beautiful, responsive public or private status dashboard.
+`statusconnect` is a hosted uptime monitoring service with public status pages. Organizations sign up, add monitors and publish a status page at `/status/{slug}` or on their own domain. It runs on shared hosting: a minute cron claims due monitors from MySQL and checks them in parallel, with no daemon or message broker. A failure is confirmed from a second location before an incident opens. Visitors can follow a page by email or Atom feed. Paid plans are billed through Asaas.
 
 ### Tech Stack & Architecture
-* **Backend**: PHP 8.2+ cURL runner triggered by native cPanel Cron.
-* **Frontend**: Vue 3, Vite, Light SVG charting.
-* **Database**: SQLite or MySQL / MariaDB.
-
-### Principal Dependencies
-* `guzzlehttp/guzzle` or native PHP `cURL` — Asynchronous HTTP ping engine.
+* **Backend**: Laravel 12 on PHP 8.2+, triggered every minute by the hosting cron.
+* **Checks**: HTTP and TCP through `curl_multi`, heartbeat (dead man's switch) pings, and agent metrics pushed by Telegraf or OpenTelemetry.
+* **Frontend**: Blade public status pages; Vue 3 / Vite operator app.
+* **Database**: MySQL 8.
 
 ### Documentation References
-* [`STATUS.md`](https://github.com/suporterfid/statusconnect/blob/main/STATUS.md) — Specification and roadmap status.
+* [Public API reference](https://app.statusconnect.net/api) — REST API v1 with `sc_` API keys.
 
 ### Ecosystem Integration
-* **Monitoring**: Monitors HTTP availability for `jotter`, `grandpasson`, and `taskconnect`.
-* **Identity**: Admin dashboard access managed via `grandpasson`.
+* **Identity**: Delegated login through `grandpasson` is supported and off by default; accounts use local email and password.
+* **Notifications**: A `taskconnect` notification channel posts incident events to the TaskConnect tasks API, with an idempotency key per incident and event.
 
 ---
 

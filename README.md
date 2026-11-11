@@ -26,7 +26,7 @@ Every project in the IROH initiative is crafted around open data formats (such a
 | **[grandpasson](PROJECTS.md#2-grandpasson)** | Centralized Single Sign-On ("SSOn") IdentityProvider for shared hosting | PHP 8.2+, SQLite/MySQL, Vue 3 | [`suporterfid/grandpasson`](https://github.com/suporterfid/grandpasson) | `In development` |
 | **[taskconnect](PROJECTS.md#3-taskconnect)** | Lightweight, fast task manager for personal and team productivity | PHP 8.2+, Vue 3 / Vite, SQLite/MySQL | [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) | `In development` |
 | **[ConvertDocToMd-PHP](PROJECTS.md#4-convertdoctomd-php)** | Standalone PHP converter turning DOC, DOCX, and PDF files into Markdown | Plain PHP 8.2+ | [`suporterfid/ConvertDocToMd-PHP`](https://github.com/suporterfid/ConvertDocToMd-PHP) | `v0 complete` |
-| **[statusconnect](PROJECTS.md#5-statusconnect)** | Self-hosted status page and uptime monitoring service for shared hosting | PHP 8.2+, Vue 3, SQLite/MySQL | [`suporterfid/statusconnect`](https://github.com/suporterfid/statusconnect) | `Planned` |
+| **[statusconnect](PROJECTS.md#5-statusconnect)** | Hosted uptime monitoring and public status pages | Laravel 12, Vue 3, MySQL 8 | Hosted service: [app.statusconnect.net](https://app.statusconnect.net) | `In production` |
 | **[tallymark](PROJECTS.md#6-tallymark)** | Minimalist tally counter and habit/event tracking tool | PHP 8.2+, Vue 3 / Vite, SQLite | [`suporterfid/tallymark`](https://github.com/suporterfid/tallymark) | `Planned` |
 
 *For detailed architectural descriptions, integration patterns, and dependency maps, see [PROJECTS.md](PROJECTS.md).*
