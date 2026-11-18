@@ -24,10 +24,10 @@ Cada projeto na iniciativa IROH é construído ao redor de formatos abertos de d
 | :--- | :--- | :--- | :--- | :--- |
 | **[jotter](PROJECTS.md#1-jotter)** | Base de conhecimento Markdown auto-hospedada com wikilinks, WebDAV sync e servidor MCP | Laravel, Vue 3, MySQL/SQLite | [`suporterfid/jotter`](https://github.com/suporterfid/jotter) | `v0 complete` |
 | **[grandpasson](PROJECTS.md#2-grandpasson)** | Provedor de Identidade Single Sign-On ("SSOn") centralizado para hospedagem compartilhada | PHP 8.2+, SQLite/MySQL, Vue 3 | [`suporterfid/grandpasson`](https://github.com/suporterfid/grandpasson) | `Em desenvolvimento` |
-| **[taskconnect](PROJECTS.md#3-taskconnect)** | Gerenciador de tarefas leve e rápido para produtividade pessoal e de equipe | PHP 8.2+, Vue 3 / Vite, SQLite/MySQL | [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) | `Em desenvolvimento` |
+| **[taskconnect](PROJECTS.md#3-taskconnect)** | Agendador de tarefas HTTP multi-tenant e despachante de webhooks para hospedagem compartilhada | PHP 8.2+ (Laravel 12), Vue 3 / Vite, SQLite/MySQL | [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) | `Pronto para produção (v1.3.0)` |
 | **[ConvertDocToMd-PHP](PROJECTS.md#4-convertdoctomd-php)** | Utilitário PHP independente que converte arquivos DOC, DOCX e PDF em Markdown | PHP 8.2+ puro | [`suporterfid/ConvertDocToMd-PHP`](https://github.com/suporterfid/ConvertDocToMd-PHP) | `v0 complete` |
 | **[statusconnect](PROJECTS.md#5-statusconnect)** | Serviço hospedado de monitoramento de uptime e páginas de status públicas | Laravel 12, Vue 3, MySQL 8 | Serviço hospedado: [app.statusconnect.net](https://app.statusconnect.net) | `Em produção` |
-| **[tallymark](PROJECTS.md#6-tallymark)** | Contador de cliques e ferramenta minimalista para rastreamento de hábitos e eventos | PHP 8.2+, Vue 3 / Vite, SQLite | [`suporterfid/tallymark`](https://github.com/suporterfid/tallymark) | `Planejado` |
+| **[tallymark](PROJECTS.md#6-tallymark)** | Analytics web sem cookies e com privacidade em primeiro lugar, para hospedagem compartilhada | PHP 8.2+ (Laravel), Vue 3 / Vite, MySQL | [`suporterfid/tallymark`](https://github.com/suporterfid/tallymark) | `Em desenvolvimento` |
 
 *Para descrições arquiteturais detalhadas, padrões de integração e mapa de dependências, veja o arquivo [PROJECTS.md](PROJECTS.md).*
 

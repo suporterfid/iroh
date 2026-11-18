@@ -24,13 +24,13 @@ While each project can operate completely standalone, they are engineered to sea
          v                      v                      v
 +------------------+   +------------------+   +------------------+
 |      jotter      |   |   taskconnect    |   |  statusconnect   |
-| (Knowledge Base) |   |  (Task Manager)  |   | (Uptime Monitor) |
+| (Knowledge Base) |   |  (Scheduler)     |   | (Uptime Monitor) |
 +--------+---------+   +------------------+   +------------------+
          ^
          | (Doc Conversion)
 +--------+---------+                          +------------------+
 | ConvertDocToMd-  |                          |    tallymark     |
-|       PHP        |                          | (Tally Counter)  |
+|       PHP        |                          | (Analytics)     |
 +------------------+                          +------------------+
 ```
 
@@ -120,28 +120,24 @@ Every fullstack web project within the IROH initiative is **100% testable, build
 ## 3. taskconnect
 
 * **Repository**: [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) *(also referenced as `suporterfid/a1-task-connect`)*
-* **Status**: `In development`
-* **Category**: Lightweight Task & Productivity Management
+* **Status**: `Production ready (v1.3.0)`
+* **Category**: HTTP Task Scheduling & Webhook Delivery
 
 ### Description
-`taskconnect` is a fast, streamlined task management tool designed for personal focus and small team project tracking. It offers Kanban boards, list views, priority tags, and deadline tracking without the bloat, slow load times, or monthly costs of commercial task SaaS platforms.
+`taskconnect` is a self-hosted, multi-tenant HTTP task scheduler and webhook dispatcher built for commodity PHP/MySQL shared hosting. It runs one-shot delayed webhooks, recurring cron schedules and manual executions without a background daemon: a per-minute cron claims due tasks through MySQL claim leasing. It includes a dead letter queue with replay, pipeline DAG execution (`on_success`, `on_failure`, `depends_on`), SSRF-hardened outbound HTTP, and encrypted endpoint credentials.
 
 ### Tech Stack & Architecture
-* **Backend**: PHP 8.2+ PDO REST API.
-* **Frontend**: Vue 3 (Composition API), Vite, Tailwind CSS.
-* **Database**: SQLite or MySQL / MariaDB.
-
-### Principal Dependencies
-* `vuedraggable` / `sortablejs` — Smooth drag-and-drop Kanban interface.
-* `pinia` — Reactive state management.
+* **Backend**: PHP 8.2+ / Laravel 12, driven by the `scheduler:execute-due` and `scheduler:retry-due` artisan commands.
+* **Frontend**: Vue 3 (Composition API), Vite, Pinia, Tailwind CSS.
+* **Database**: MySQL / MariaDB (production) or SQLite (local / single tenant).
 
 ### Documentation References
-* [`AGENTS.md`](https://github.com/suporterfid/taskconnect/blob/main/AGENTS.md) — Task state management & API contracts.
-* [`STATUS.md`](https://github.com/suporterfid/taskconnect/blob/main/STATUS.md) — Current sprint and feature completion status.
+* [`README.md`](https://github.com/suporterfid/taskconnect/blob/main/README.md) — Features, requirements and deployment.
+* [`STATUS.md`](https://github.com/suporterfid/taskconnect/blob/main/STATUS.md) — Verified capabilities and test status.
 
 ### Ecosystem Integration
-* **Identity**: Uses `grandpasson` for user login and session management.
-* **Notes Integration**: Allows exporting task completion summaries and project logs as Markdown notes into `jotter`.
+* **Identity**: Uses `grandpasson` (OAuth2 / OIDC) for user login.
+* **Inbound tasks**: `statusconnect` posts incident events to its tasks API, and `tallymark` can post conversion tasks (both optional).
 
 ---
 
@@ -198,23 +194,22 @@ Every fullstack web project within the IROH initiative is **100% testable, build
 ## 6. tallymark
 
 * **Repository**: [`suporterfid/tallymark`](https://github.com/suporterfid/tallymark)
-* **Status**: `Planned`
-* **Category**: Minimalist Event & Habit Counter
+* **Status**: `In development`
+* **Category**: Privacy-First Web Analytics
 
 ### Description
-`tallymark` is a minimalist counter and logging application for tracking habits, inventory counts, event tallies, and daily metrics. It provides simple increment/decrement interfaces, historical logs, trend visualization, and one-click CSV/JSON export.
+`tallymark` is a cookieless web analytics service for PHP + MySQL shared hosting. A tiny standalone collector (`public/px.php`) records pageviews without booting a framework or opening a database connection; a Laravel application ingests the buffered events, builds sessions, aggregates hourly and daily rollups, and serves a dashboard. It keeps no raw IP or raw user agent, and it supports goals and shared dashboards.
 
 ### Tech Stack & Architecture
-* **Backend**: Light PHP 8.2+ API.
-* **Frontend**: Vue 3, Vite, Responsive CSS.
-* **Database**: SQLite.
-
-### Principal Dependencies
-* `chart.js` — Lightweight visual trend analytics.
+* **Collector**: Standalone PHP file with no Composer autoloader, database or cookies.
+* **Backend**: PHP 8.2+ / Laravel 12, cron-driven ingest, aggregation, rollup and retention.
+* **Frontend**: Vue 3 / TypeScript, Vite.
+* **Database**: MySQL.
 
 ### Documentation References
-* [`STATUS.md`](https://github.com/suporterfid/tallymark/blob/main/STATUS.md) — Development specification and progress tracker.
+* [`README.md`](https://github.com/suporterfid/tallymark/blob/main/README.md) — Design constraints and metric caveats.
+* [`STATUS.md`](https://github.com/suporterfid/tallymark/blob/main/STATUS.md) — Implementation units and verification record.
 
 ### Ecosystem Integration
-* **Identity**: Authenticates users via `grandpasson`.
-* **Export**: Generates daily Markdown habit logs compatible with `jotter`.
+* **Identity**: Optional `grandpasson` seam for browser login and machine tokens, off by default.
+* **Tasks**: Optional `taskconnect` outbox for conversion tasks, off by default.
