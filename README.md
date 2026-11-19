@@ -24,10 +24,10 @@ Every project in the IROH initiative is crafted around open data formats (such a
 | :--- | :--- | :--- | :--- | :--- |
 | **[jotter](PROJECTS.md#1-jotter)** | Self-hosted Markdown knowledge base with wikilinks, WebDAV sync & MCP server | Laravel, Vue 3, MySQL/SQLite | [`suporterfid/jotter`](https://github.com/suporterfid/jotter) | `v0 complete` |
 | **[grandpasson](PROJECTS.md#2-grandpasson)** | Centralized Single Sign-On ("SSOn") IdentityProvider for shared hosting | PHP 8.2+, SQLite/MySQL, Vue 3 | [`suporterfid/grandpasson`](https://github.com/suporterfid/grandpasson) | `In development` |
-| **[taskconnect](PROJECTS.md#3-taskconnect)** | Lightweight, fast task manager for personal and team productivity | PHP 8.2+, Vue 3 / Vite, SQLite/MySQL | [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) | `In development` |
+| **[taskconnect](PROJECTS.md#3-taskconnect)** | Multi-tenant HTTP task scheduler and webhook dispatcher for shared hosting | PHP 8.2+ (Laravel 12), Vue 3 / Vite, SQLite/MySQL | [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) | `Production ready (v1.3.0)` |
 | **[ConvertDocToMd-PHP](PROJECTS.md#4-convertdoctomd-php)** | Standalone PHP converter turning DOC, DOCX, and PDF files into Markdown | Plain PHP 8.2+ | [`suporterfid/ConvertDocToMd-PHP`](https://github.com/suporterfid/ConvertDocToMd-PHP) | `v0 complete` |
 | **[statusconnect](PROJECTS.md#5-statusconnect)** | Hosted uptime monitoring and public status pages | Laravel 12, Vue 3, MySQL 8 | Hosted service: [app.statusconnect.net](https://app.statusconnect.net) | `In production` |
-| **[tallymark](PROJECTS.md#6-tallymark)** | Minimalist tally counter and habit/event tracking tool | PHP 8.2+, Vue 3 / Vite, SQLite | [`suporterfid/tallymark`](https://github.com/suporterfid/tallymark) | `Planned` |
+| **[tallymark](PROJECTS.md#6-tallymark)** | Privacy-first, cookieless web analytics for shared hosting | PHP 8.2+ (Laravel), Vue 3 / Vite, MySQL | [`suporterfid/tallymark`](https://github.com/suporterfid/tallymark) | `In development` |
 
 *For detailed architectural descriptions, integration patterns, and dependency maps, see [PROJECTS.md](PROJECTS.md).*
 
