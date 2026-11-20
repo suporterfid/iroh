@@ -91,7 +91,7 @@ Every fullstack web project within the IROH initiative is **100% testable, build
 
 ## 2. grandpasson
 
-* **Repository**: [`suporterfid/grandpasson`](https://github.com/suporterfid/grandpasson)
+* **Repository**: [`suporterfid/grandpasson-ce`](https://github.com/suporterfid/grandpasson-ce)
 * **Status**: `In development`
 * **Category**: Centralized Single Sign-On (SSO / "SSOn")
 
@@ -109,8 +109,8 @@ Every fullstack web project within the IROH initiative is **100% testable, build
 * `bramus/router` or lightweight custom router — Fast request routing without heavy framework overhead.
 
 ### Documentation References
-* [`AGENTS.md`](https://github.com/suporterfid/grandpasson/blob/main/AGENTS.md) — Domain contracts and auth guidelines.
-* [`STATUS.md`](https://github.com/suporterfid/grandpasson/blob/main/STATUS.md) — Active feature status and implementation roadmap.
+* [`AGENTS.md`](https://github.com/suporterfid/grandpasson-ce/blob/main/AGENTS.md) — Domain contracts and auth guidelines.
+* [`CHANGELOG.md`](https://github.com/suporterfid/grandpasson-ce/blob/main/CHANGELOG.md) — Release history.
 
 ### Ecosystem Integration
 * **Central Hub**: Acts as the primary IdentityProvider (IdP) for `jotter`, `taskconnect`, `statusconnect`, and `tallymark`.
