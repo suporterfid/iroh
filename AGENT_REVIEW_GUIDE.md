@@ -75,7 +75,7 @@ Rewrite or adjust `README.md` to contain the following standard structure:
 8. **Usage**: Minimal usage examples or CLI commands.
 9. **Authentication / SSO (if applicable)**:
    * Specify if this project integrates with `grandpasson` as its Single Sign-On IdentityProvider (OIDC/OAuth2/signed JWTs).
-   * Include direct link to `https://github.com/suporterfid/grandpasson`.
+   * Include direct link to `https://github.com/suporterfid/grandpasson-ce`.
 10. **Contributing**: Point to the local `CONTRIBUTING.md` or meta-repo `CONTRIBUTING.md`, noting that initiative-wide governance is coordinated at `suporterfid/iroh`.
 11. **License**: Standard MIT license reference.
 
@@ -98,7 +98,7 @@ Ensure every README includes a dedicated badge or callout box pointing to the ma
 
 #### 6. Cross-Project Integration Links
 Where `<PROJECT_NAME>` integrates with other IROH projects, add an **"Integration with Other IROH Projects"** subsection with direct links:
-* `grandpasson` (`suporterfid/grandpasson`) — Central Single Sign-On (SSOn) IdentityProvider.
+* `grandpasson` (`suporterfid/grandpasson-ce`) — Central Single Sign-On (SSOn) IdentityProvider.
 * `jotter` (`suporterfid/jotter`) — Self-hosted Markdown knowledge base & WebDAV sync.
 * `ConvertDocToMd-PHP` (`suporterfid/ConvertDocToMd-PHP`) — Plain PHP DOC/DOCX/PDF to Markdown converter.
 * `taskconnect` (`suporterfid/taskconnect`) — Lightweight task & project manager.

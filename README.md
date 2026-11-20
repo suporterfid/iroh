@@ -23,7 +23,7 @@ Every project in the IROH initiative is crafted around open data formats (such a
 | Project | Description | Tech Stack | Repository | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **[jotter](PROJECTS.md#1-jotter)** | Self-hosted Markdown knowledge base with wikilinks, WebDAV sync & MCP server | Laravel, Vue 3, MySQL/SQLite | [`suporterfid/jotter`](https://github.com/suporterfid/jotter) | `v0 complete` |
-| **[grandpasson](PROJECTS.md#2-grandpasson)** | Centralized Single Sign-On ("SSOn") IdentityProvider for shared hosting | PHP 8.2+, SQLite/MySQL, Vue 3 | [`suporterfid/grandpasson`](https://github.com/suporterfid/grandpasson) | `In development` |
+| **[grandpasson](PROJECTS.md#2-grandpasson)** | Centralized Single Sign-On ("SSOn") IdentityProvider for shared hosting | PHP 8.2+, SQLite/MySQL, Vue 3 | [`suporterfid/grandpasson-ce`](https://github.com/suporterfid/grandpasson-ce) | `In development` |
 | **[taskconnect](PROJECTS.md#3-taskconnect)** | Multi-tenant HTTP task scheduler and webhook dispatcher for shared hosting | PHP 8.2+ (Laravel 12), Vue 3 / Vite, SQLite/MySQL | [`suporterfid/taskconnect`](https://github.com/suporterfid/taskconnect) | `Production ready (v1.3.0)` |
 | **[ConvertDocToMd-PHP](PROJECTS.md#4-convertdoctomd-php)** | Standalone PHP converter turning DOC, DOCX, and PDF files into Markdown | Plain PHP 8.2+ | [`suporterfid/ConvertDocToMd-PHP`](https://github.com/suporterfid/ConvertDocToMd-PHP) | `v0 complete` |
 | **[statusconnect](PROJECTS.md#5-statusconnect)** | Hosted uptime monitoring and public status pages | Laravel 12, Vue 3, MySQL 8 | Hosted service: [app.statusconnect.net](https://app.statusconnect.net) | `In production` |
